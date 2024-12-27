@@ -54,7 +54,7 @@ function App() {
 
   return (
     <section className=" h-[100vh] bg-cover bg-no-repeat">
-      <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start sm:top-10 lg:right-60">
+      <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start top-10 lg:right-60">
         {/* top section */}
         <div id="top" className="grid grid-cols-2 border-b-2 p-5">
           {/* date */}
