@@ -8,7 +8,7 @@ function App() {
   const [GregianDate, setGregoianDate] = useState("");
   const [HijriDate, setHijriDate] = useState("");
   // setting city
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Cairo");
 
   // getting todays date
   const date_today = new Date();
@@ -18,7 +18,7 @@ function App() {
     const fetchPrayerTimes = async () => {
       try {
         const response = await fetch(
-          `https://api.aladhan.com/v1/timingsByCity/${date_today}?city=Eg&country=cairo`
+          `https://api.aladhan.com/v1/timingsByCity/${date_today}?city=Eg&country=${city}`
         );
         const prayer_data = await response.json();
         // setting Prayer times
@@ -31,10 +31,19 @@ function App() {
         console.log("error");
       }
     };
-    console.log(city);
 
     fetchPrayerTimes();
-  }, []);
+  }, [city]);
+
+  const formattingTime = (time) => {
+    if (!time) {
+      return "00:00";
+    }
+    let [houres, minuts] = time.split(":").map(Number);
+    const perd = houres >= 12 ? " م" : " ص ";
+    houres = houres % 12 || 12;
+    return `${houres}:${minuts} ${perd}`;
+  };
 
   return (
     <section className=" h-[100vh] bg-cover bg-no-repeat">
@@ -72,11 +81,11 @@ function App() {
         {/* prayer times table */}
         {prayerTimes ? (
           <>
-            <Prayer name="الفجر" time={prayerTimes.Fajr ?? "N/A"} />
-            <Prayer name="الظهر" time={prayerTimes.Dhuhr ?? "N/A"} />
-            <Prayer name="العصر" time={prayerTimes.Asr ?? "N/A"} />
-            <Prayer name="المغرب" time={prayerTimes.Maghrib ?? "N/A"} />
-            <Prayer name="العشاء" time={prayerTimes.Isha ?? "N/A"} />
+            <Prayer name="الفجر" time={formattingTime(prayerTimes.Fajr)} />
+            <Prayer name="الظهر" time={formattingTime(prayerTimes.Dhuhr)} />
+            <Prayer name="العصر" time={formattingTime(prayerTimes.Asr)} />
+            <Prayer name="المغرب" time={formattingTime(prayerTimes.Maghrib)} />
+            <Prayer name="العشاء" time={formattingTime(prayerTimes.Isha)} />
           </>
         ) : (
           <p>Loading prayer times...</p> // or an error message
