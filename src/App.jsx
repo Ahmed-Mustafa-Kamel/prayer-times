@@ -79,7 +79,6 @@ function App() {
             </select>
           </div>
         </div>
-
         {/* prayer times table */}
         {prayerTimes ? (
           <>
@@ -92,6 +91,15 @@ function App() {
         ) : (
           <p>Loading prayer times...</p> // or an error message
         )}
+      </div>
+      <div className=" absolute bottom-0 right-[50%] md:right-[30%]">
+        <a
+          href="https://ahmed-mustafa-portfolio-delta.vercel.app/"
+          target="_blank"
+          className="text-xs"
+        >
+          {"< Ahmed Mustafa />"}
+        </a>
       </div>
     </section>
   );
