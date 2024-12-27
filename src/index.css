@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Marhey", serif;
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+section {
+  background: url(assets/bg.jpg);
+}
+
+.container {
+  background: #332a226d;
+  backdrop-filter: blur(10px);
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+section #top select {
+  background: rgba(112, 70, 33, 0.945);
+  padding: 0 10px;
+  margin: 2px;
+}
+#prayer {
+  background: rgba(107, 64, 27, 0.945);
+}
