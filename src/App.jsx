@@ -1,5 +1,5 @@
 import Prayer from "./components/Prayer";
-import { Cities } from "../src/assets/constants";
+import { Cities, convertToArabicNumerals } from "../src/assets/constants";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
   const [city, setCity] = useState("Cairo");
 
   // getting todays date
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const date_today = new Date();
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function App() {
         // setting Prayer times
         setPrayerTimes(prayer_data.data.timings);
 
-        // setting gregoianDate
+        // setting gregoian Date and hijri Date
         setGregoianDate(prayer_data.data.date.gregorian.date);
         setHijriDate(prayer_data.data.date.hijri.date);
       } catch {
@@ -33,7 +34,7 @@ function App() {
     };
 
     fetchPrayerTimes();
-  }, [city]);
+  }, [city, date_today]);
 
   const formattingTime = (time) => {
     if (!time) {
@@ -42,9 +43,13 @@ function App() {
     let [houres, minutes] = time.split(":").map(Number);
     const perd = houres >= 12 ? " م" : " ص ";
     houres = houres % 12 || 12;
-    // Add leading zero to minutes if less than 10
-    minutes = minutes < 10 ? `0${minutes}` : minutes;
-    return `${houres}:${minutes} ${perd}`;
+    // converting times number to show in arabic numbers
+    const arabicHours = convertToArabicNumerals(houres);
+    const arabicMinutes = convertToArabicNumerals(
+      // Add leading zero to minutes if less than 10
+      minutes < 10 ? `0${minutes}` : minutes
+    );
+    return `${arabicHours}:${arabicMinutes} ${perd}`;
   };
 
   return (

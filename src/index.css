@@ -5,7 +5,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Marhey", serif;
+  /* font-family: "Marhey", serif; */
   color: white;
 }
 html {
@@ -25,8 +25,8 @@ section {
 }
 section #top select {
   background: rgba(112, 70, 33, 0.945);
-  padding: 0 10px;
-  margin: 2px;
+  padding: 5px 10px;
+  margin: 6px;
 }
 #prayer {
   background: rgba(107, 64, 27, 0.945);
