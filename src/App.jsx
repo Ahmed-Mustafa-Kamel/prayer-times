@@ -54,7 +54,7 @@ function App() {
 
   return (
     <section className=" h-[100vh] bg-cover bg-no-repeat">
-      <div className="container w-[90%] lg:w-[40%] relative top-10 justify-self-center lg:justify-self-start lg:top-36 lg:right-60">
+      <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start lg:right-60">
         {/* top section */}
         <div id="top" className="grid grid-cols-2 border-b-2 p-5">
           {/* date */}
@@ -103,7 +103,7 @@ function App() {
           target="_blank"
           className="text-xs"
         >
-          {"< Ahmed Mustafa />"}
+          {"{ Ahmed Mustafa }"}
         </a>
       </div>
     </section>
