@@ -39,10 +39,12 @@ function App() {
     if (!time) {
       return "00:00";
     }
-    let [houres, minuts] = time.split(":").map(Number);
+    let [houres, minutes] = time.split(":").map(Number);
     const perd = houres >= 12 ? " م" : " ص ";
     houres = houres % 12 || 12;
-    return `${houres}:${minuts} ${perd}`;
+    // Add leading zero to minutes if less than 10
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+    return `${houres}:${minutes} ${perd}`;
   };
 
   return (
