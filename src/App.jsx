@@ -41,12 +41,21 @@ function App() {
       <div className="container w-[90%] lg:w-[40%] relative top-10 justify-self-center md:justify-self-start md:top-36 md:right-60">
         {/* top section */}
         <div id="top" className="grid grid-cols-2 border-b-2 p-5">
+          {/* date */}
+          <div className="gap-6 space-y-2">
+            <h3 className="text-2xl">التاريخ</h3>
+            <div className="date space-y-2">
+              <h3 className=" text-gray-200">{GregianDate} / م</h3>
+              <h3 className=" text-gray-200">{HijriDate} / هـ</h3>
+            </div>
+          </div>
+
           {/* city selection */}
           <div className="city gap-6">
             <h3 className="text-2xl">المدينة</h3>
             <select
               name="city"
-              className="rounded-md"
+              className="rounded-md p-4"
               onChange={(e) => {
                 setCity(e.target.value);
               }}
@@ -57,15 +66,6 @@ function App() {
                 </option>
               ))}
             </select>
-          </div>
-
-          {/* date */}
-          <div className="gap-6 space-y-2">
-            <h3 className="text-2xl">التاريخ</h3>
-            <div className="date space-y-2">
-              <h3 className=" text-gray-200">{GregianDate} / م</h3>
-              <h3 className=" text-gray-200">{HijriDate} / هـ</h3>
-            </div>
           </div>
         </div>
 
