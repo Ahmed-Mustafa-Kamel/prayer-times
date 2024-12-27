@@ -92,7 +92,7 @@ function App() {
           <p>Loading prayer times...</p> // or an error message
         )}
       </div>
-      <div className=" absolute bottom-0 right-[50%] md:right-[30%]">
+      <div className=" absolute bottom-0 right-[30%]">
         <a
           href="https://ahmed-mustafa-portfolio-delta.vercel.app/"
           target="_blank"
