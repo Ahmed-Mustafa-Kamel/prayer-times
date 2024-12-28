@@ -26,15 +26,15 @@ function App() {
         // setting Prayer times
         setPrayerTimes(prayer_data.data.timings);
 
-        // setting gregoian Date and hijri Date
+        // setting gregoian Date
         setGregoianDate(prayer_data.data.date.gregorian.date);
-
+        // setting Hijri Date
         setHijriDateDay(prayer_data.data.date.hijri.day);
         setHijriDateMonth(prayer_data.data.date.hijri.month.ar);
         setHijriDateYear(prayer_data.data.date.hijri.year);
         console.log(prayer_data);
-      } catch {
-        console.log("error");
+      } catch (error) {
+        console.log(error);
       }
     };
 
