@@ -86,7 +86,8 @@ function App() {
             <div className="date space-y-2">
               <h3 className=" text-gray-200">{GregianDate}</h3>
               <h3 className=" text-gray-200">
-                {parseInt(HijriDateDay) + 1}-{HijriDateMonth}-{HijriDateYear}هـ
+                {parseInt(HijriDateDay) + 1}/ {HijriDateMonth}/ {HijriDateYear}
+                هـ
               </h3>
             </div>
           </div>
