@@ -97,6 +97,7 @@ function App() {
         {prayerTimes ? (
           <>
             <Prayer name="الفجر" time={formattingTime(prayerTimes.Fajr)} />
+            <Prayer name="الشروق" time={formattingTime(prayerTimes.Sunrise)} />
             <Prayer name="الظهر" time={formattingTime(prayerTimes.Dhuhr)} />
             <Prayer name="العصر" time={formattingTime(prayerTimes.Asr)} />
             <Prayer name="المغرب" time={formattingTime(prayerTimes.Maghrib)} />
