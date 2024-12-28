@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 function App() {
   const [prayerTimes, setPrayerTimes] = useState();
   // setting dates
-  const [GregianDate, setGregoianDate] = useState("");
-  const [HijriDateDay, setHijriDateDay] = useState("");
-  const [HijriDateMonth, setHijriDateMonth] = useState("");
-  const [HijriDateYear, setHijriDateYear] = useState("");
+  const [dates, setDates] = useState({
+    GregianDate: "",
+    HijriDateDay: "",
+    HijriDateMonth: "",
+    HijriDateYear: "",
+  });
   // setting city
   const [city, setCity] = useState("Cairo");
 
@@ -23,15 +25,22 @@ function App() {
           `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=Eg&date=${date_today}`
         );
         const prayer_data = await response.json();
+
+        localStorage.setItem(
+          `prayerTimes_${city}`,
+          JSON.stringify(prayer_data.data.timings)
+        );
+
         // setting Prayer times
         setPrayerTimes(prayer_data.data.timings);
 
         // setting gregoian Date
-        setGregoianDate(prayer_data.data.date.gregorian.date);
-        // setting Hijri Date
-        setHijriDateDay(prayer_data.data.date.hijri.day);
-        setHijriDateMonth(prayer_data.data.date.hijri.month.ar);
-        setHijriDateYear(prayer_data.data.date.hijri.year);
+        setDates({
+          GregianDate: prayer_data.data.date.gregorian.date,
+          HijriDateDay: prayer_data.data.date.hijri.day,
+          HijriDateMonth: prayer_data.data.date.hijri.month.ar,
+          HijriDateYear: prayer_data.data.date.hijri.year,
+        });
       } catch (error) {
         console.log(error);
       }
@@ -84,10 +93,11 @@ function App() {
           <div className="gap-6 space-y-2 sm:text-xs md:text-xl">
             <h3 className="text-2xl">التاريخ</h3>
             <div className="date space-y-2">
-              <h3 className=" text-gray-200">{GregianDate}</h3>
+              <h3 className=" text-gray-200">{dates.GregianDate}</h3>
               <h3 className=" text-gray-200">
-                {convertToArabicNumerals(HijriDateDay)} / {HijriDateMonth} /{" "}
-                {convertToArabicNumerals(HijriDateYear)} هـ
+                {convertToArabicNumerals(dates.HijriDateDay)} /{" "}
+                {dates.HijriDateMonth} /{" "}
+                {convertToArabicNumerals(dates.HijriDateYear)} هـ
               </h3>
             </div>
           </div>
