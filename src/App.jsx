@@ -32,7 +32,6 @@ function App() {
         setHijriDateDay(prayer_data.data.date.hijri.day);
         setHijriDateMonth(prayer_data.data.date.hijri.month.ar);
         setHijriDateYear(prayer_data.data.date.hijri.year);
-        console.log(prayer_data);
       } catch (error) {
         console.log(error);
       }
