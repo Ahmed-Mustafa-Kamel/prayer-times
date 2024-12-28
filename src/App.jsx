@@ -6,12 +6,13 @@ function App() {
   const [prayerTimes, setPrayerTimes] = useState();
   // setting dates
   const [GregianDate, setGregoianDate] = useState("");
-  const [HijriDate, setHijriDate] = useState("");
+  const [HijriDateDay, setHijriDateDay] = useState("");
+  const [HijriDateMonth, setHijriDateMonth] = useState("");
+  const [HijriDateYear, setHijriDateYear] = useState("");
   // setting city
   const [city, setCity] = useState("Cairo");
 
   // getting todays date
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const date_today = new Date();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function App() {
     const fetchPrayerTimes = async () => {
       try {
         const response = await fetch(
-          `https://api.aladhan.com/v1/timingsByCity/${date_today}?city=Eg&country=${city}`
+          `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=Eg&date=${date_today}`
         );
         const prayer_data = await response.json();
         // setting Prayer times
@@ -27,14 +28,18 @@ function App() {
 
         // setting gregoian Date and hijri Date
         setGregoianDate(prayer_data.data.date.gregorian.date);
-        setHijriDate(prayer_data.data.date.hijri.date);
+
+        setHijriDateDay(prayer_data.data.date.hijri.day);
+        setHijriDateMonth(prayer_data.data.date.hijri.month.ar);
+        setHijriDateYear(prayer_data.data.date.hijri.year);
+        console.log(prayer_data);
       } catch {
         console.log("error");
       }
     };
 
     fetchPrayerTimes();
-  }, [city, date_today]);
+  }, [city]);
 
   const formattingTime = (time) => {
     if (!time) {
@@ -57,15 +62,6 @@ function App() {
       <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start top-10 lg:right-60">
         {/* top section */}
         <div id="top" className="grid grid-cols-2 border-b-2 p-5">
-          {/* date */}
-          <div className="gap-6 space-y-2">
-            <h3 className="text-2xl">التاريخ</h3>
-            <div className="date space-y-2">
-              <h3 className=" text-gray-200">{GregianDate} / م</h3>
-              <h3 className=" text-gray-200">{HijriDate} / هـ</h3>
-            </div>
-          </div>
-
           {/* city selection */}
           <div className="city gap-6">
             <h3 className="text-2xl">المدينة</h3>
@@ -82,6 +78,17 @@ function App() {
                 </option>
               ))}
             </select>
+          </div>
+
+          {/* date */}
+          <div className="gap-6 space-y-2 sm:text-xs">
+            <h3 className="text-2xl">التاريخ</h3>
+            <div className="date space-y-2">
+              <h3 className=" text-gray-200">{GregianDate}</h3>
+              <h3 className=" text-gray-200">
+                {parseInt(HijriDateDay) + 1}-{HijriDateMonth}-{HijriDateYear}هـ
+              </h3>
+            </div>
           </div>
         </div>
         {/* prayer times table */}
