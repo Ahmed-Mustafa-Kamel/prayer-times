@@ -46,7 +46,7 @@ function App() {
       return "00:00";
     }
     let [houres, minutes] = time.split(":").map(Number);
-    const perd = houres >= 12 ? " م" : " ص ";
+    const perd = houres >= 12 ? "م" : "ص ";
     houres = houres % 12 || 12;
     // converting times number to show in arabic numbers
     const arabicHours = convertToArabicNumerals(houres);
@@ -86,7 +86,7 @@ function App() {
             <div className="date space-y-2">
               <h3 className=" text-gray-200">{GregianDate}</h3>
               <h3 className=" text-gray-200">
-                {parseInt(HijriDateDay) + 1}/ {HijriDateMonth}/ {HijriDateYear}
+                {parseInt(HijriDateDay) + 1}/ {HijriDateMonth} / {HijriDateYear}
                 هـ
               </h3>
             </div>

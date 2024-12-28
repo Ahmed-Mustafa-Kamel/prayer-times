@@ -3,6 +3,7 @@ export const Cities = [
   { name: "الجيزة", value: "Giza" },
   { name: "الاسكندرية", value: "Alexandria" },
   { name: "مطروح", value: "Marsa Matruh" },
+  { name: "بورسعيد", value: "Portsaied" },
   // { name: "البحيرة", value: "Buhiera" },
   { name: "المنصورة", value: "Mansoura" },
   { name: "السويس", value: "Suez" },
