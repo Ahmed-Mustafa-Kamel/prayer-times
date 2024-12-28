@@ -63,7 +63,7 @@ function App() {
         {/* top section */}
         <div id="top" className="flex justify-between border-b-2 p-2">
           {/* city selection */}
-          <div className="city gap-6 flex flex-col justify-self-end">
+          <div className="city gap-6 flex flex-col justify-center">
             <h3 className="text-2xl">المدينة</h3>
             <select
               name="city"
