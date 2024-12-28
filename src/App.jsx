@@ -54,6 +54,7 @@ function App() {
       // Add leading zero to minutes if less than 10
       minutes < 10 ? `0${minutes}` : minutes
     );
+
     return `${arabicHours}:${arabicMinutes} ${perd}`;
   };
 
@@ -86,7 +87,8 @@ function App() {
             <div className="date space-y-2">
               <h3 className=" text-gray-200">{GregianDate}</h3>
               <h3 className=" text-gray-200">
-                {parseInt(HijriDateDay) + 1}/ {HijriDateMonth} / {HijriDateYear}
+                {parseInt(HijriDateDay) + 1} / {HijriDateMonth} /{" "}
+                {HijriDateYear}
                 هـ
               </h3>
             </div>
