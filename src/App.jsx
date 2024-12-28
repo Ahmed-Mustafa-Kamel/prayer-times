@@ -61,9 +61,9 @@ function App() {
     <section className=" h-[100vh] bg-cover bg-no-repeat">
       <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start top-10 lg:right-60">
         {/* top section */}
-        <div id="top" className="grid grid-cols-2 border-b-2 p-5">
+        <div id="top" className="flex justify-between border-b-2 p-2">
           {/* city selection */}
-          <div className="city gap-6">
+          <div className="city gap-6 flex flex-col justify-self-end">
             <h3 className="text-2xl">المدينة</h3>
             <select
               name="city"
@@ -81,7 +81,7 @@ function App() {
           </div>
 
           {/* date */}
-          <div className="gap-6 space-y-2 sm:text-xs">
+          <div className="gap-6 space-y-2 sm:text-xs md:text-xl">
             <h3 className="text-2xl">التاريخ</h3>
             <div className="date space-y-2">
               <h3 className=" text-gray-200">{GregianDate}</h3>
