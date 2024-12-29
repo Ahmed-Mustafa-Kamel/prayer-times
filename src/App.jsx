@@ -113,13 +113,13 @@ function App() {
           <div className="text-center sm:text-right animate__animated animate__fadeInLeft">
             <h3 className="text-lg sm:text-xl mb-1">التاريخ</h3>
             <div className="space-y-0.5 sm:space-y-1">
-              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft border-b">
+              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft">
                 {dates.GregoianDate.split("-")
                   .map((num) => convertToArabicNumerals(num))
                   .join(" / ")}{" "}
                 م
               </h3>
-              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft border-b">
+              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft">
                 {convertToArabicNumerals(dates.HijriDateDay)} / {" "}
                 {dates.HijriDateMonth} / {" "}
                 {convertToArabicNumerals(dates.HijriDateYear)} هـ 
