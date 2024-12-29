@@ -1,6 +1,7 @@
 import Prayer from "./components/Prayer";
 import { Cities, convertToArabicNumerals } from "../src/assets/constants";
 import { useEffect, useState } from "react";
+import AMLogo from "./components/AMLogo";
 
 function App() {
   const [prayerTimes, setPrayerTimes] = useState();
@@ -68,6 +69,8 @@ function App() {
 
   return (
     <section className=" h-[100vh] bg-cover bg-no-repeat">
+      <AMLogo />
+
       <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start top-10 lg:right-60">
         {/* top section */}
         <div id="top" className="flex justify-between border-b-2 p-2">
@@ -116,15 +119,6 @@ function App() {
           <p>Loading prayer times...</p> // or an error message
         )}
       </div>
-      {/* <div className=" absolute bottom-0 right-[30%]">
-        <a
-          href="https://ahmed-mustafa-portfolio-delta.vercel.app/"
-          target="_blank"
-          className="text-xs"
-        >
-          {"{ Ahmed Mustafa }"}
-        </a>
-      </div> */}
     </section>
   );
 }
