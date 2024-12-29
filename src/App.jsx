@@ -99,7 +99,7 @@ function App() {
               </h3>
               <h3 className=" text-gray-200">
                 {convertToArabicNumerals(dates.HijriDateDay)} /{" "}
-                {dates.HijriDateMonth} /{" "}
+                {dates.HijriDateMonth}/
                 {convertToArabicNumerals(dates.HijriDateYear)} هـ
               </h3>
             </div>
