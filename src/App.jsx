@@ -110,25 +110,25 @@ function App() {
         {/* top section */}
         <div id="top" className="flex flex-col sm:flex-row justify-between items-center border-b-2 p-3 gap-2 sm:gap-4">
           {/* date */}
-          <div className="text-center sm:text-right">
+          <div className="text-center sm:text-right animate__animated animate__fadeInLeft">
             <h3 className="text-lg sm:text-xl mb-1">التاريخ</h3>
             <div className="space-y-0.5 sm:space-y-1">
-              <h3 className="text-sm sm:text-base text-gray-200">
+              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft">
                 {dates.GregoianDate.split("-")
                   .map((num) => convertToArabicNumerals(num))
                   .join(" / ")}{" "}
                 م
               </h3>
-              <h3 className="text-sm sm:text-base text-gray-200">
+              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft">
                 {convertToArabicNumerals(dates.HijriDateDay)} / {" "}
                 {dates.HijriDateMonth} / {" "}
-                {convertToArabicNumerals(dates.HijriDateYear) } هـ 
+                {convertToArabicNumerals(dates.HijriDateYear)} هـ 
               </h3> 
             </div>
           </div>
 
           {/* city selection */}
-          <div className="city flex md:flex-col items-center sm:items-start sm:w-auto">
+          <div className="city flex md:flex-col items-center sm:items-start sm:w-auto animate__animated animate__fadeInRight">
             <h3 className="text-lg sm:text-xl mb-1">المدينة</h3>
             <select
               name="city"
@@ -143,12 +143,10 @@ function App() {
               ))}
             </select>
           </div>
-
-
         </div>
 
         {/* prayer times table */}
-        <div className="p-2 sm:p-3">
+        <div className="p-2 sm:p-3 prayers animate__animated animate__fadeInUp">
           {prayerTimesList || <Loader />}
         </div>
       </div>

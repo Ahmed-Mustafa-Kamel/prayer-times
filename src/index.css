@@ -39,6 +39,32 @@ section {
   padding: 30px 25px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shine 8s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 select {
@@ -53,6 +79,7 @@ select:hover {
   opacity: 0.9;
   cursor: pointer;
   background: rgba(107, 64, 27, 0.9);
+  box-shadow: 0 0 15px rgba(255, 218, 185, 0.2);
 }
 
 #prayer {
@@ -67,8 +94,7 @@ select:hover {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
+  width: 50px;
   height: 100%;
   background: linear-gradient(
     90deg,
@@ -76,11 +102,30 @@ select:hover {
     rgba(255, 255, 255, 0.1),
     transparent
   );
-  transition: 0.5s;
+  animation: cardShine 4s infinite linear;
+  transform: skewX(-20deg);
 }
 
-#prayer:hover::after {
-  left: 100%;
+@keyframes cardShine {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.date-text {
+  animation: textGlow 3s infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 218, 185, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 218, 185, 0.5);
+  }
 }
 
 /* Hover effects */
