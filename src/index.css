@@ -33,3 +33,18 @@ section #top select {
 #prayer {
   background: rgba(107, 64, 27, 0.945);
 }
+
+/* Hover effects for interactive elements */
+a:hover {
+  opacity: 0.9;
+}
+
+select:hover {
+  opacity: 0.95;
+  cursor: pointer;
+}
+
+/* Smooth transitions */
+a, select {
+  transition: all 0.3s ease;
+}

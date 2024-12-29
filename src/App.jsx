@@ -1,7 +1,7 @@
 import Prayer from "./components/Prayer";
 import { Cities, convertToArabicNumerals } from "../src/assets/constants";
 import { useEffect, useState } from "react";
-// import AMLogo from "./components/AMLogo";
+import AMLogo from "./components/AMLogo";
 
 function App() {
   const [prayerTimes, setPrayerTimes] = useState();
@@ -114,12 +114,13 @@ function App() {
             <Prayer name="العصر" time={formattingTime(prayerTimes.Asr)} />
             <Prayer name="المغرب" time={formattingTime(prayerTimes.Maghrib)} />
             <Prayer name="العشاء" time={formattingTime(prayerTimes.Isha)} />
+
           </>
         ) : (
-          <p>Loading prayer times...</p> // or an error message
+          <p>Loading prayer times...</p>
         )}
       </div>
-      {/* <AMLogo /> */}
+        <AMLogo />
     </section>
   );
 }
