@@ -94,12 +94,12 @@ function App() {
     
     return (
       <div className="prayers">
-        <Prayer name="الفجر" time={formattingTime(prayerTimes.Fajr)} />
-        <Prayer name="الشروق" time={formattingTime(prayerTimes.Sunrise)} />
-        <Prayer name="الظهر" time={formattingTime(prayerTimes.Dhuhr)} />
-        <Prayer name="العصر" time={formattingTime(prayerTimes.Asr)} />
-        <Prayer name="المغرب" time={formattingTime(prayerTimes.Maghrib)} />
-        <Prayer name="العشاء" time={formattingTime(prayerTimes.Isha)} />
+        <Prayer name="الفَجْر" time={formattingTime(prayerTimes.Fajr)} />
+        <Prayer name="الشُروق" time={formattingTime(prayerTimes.Sunrise)} />
+        <Prayer name="الظُّهْر" time={formattingTime(prayerTimes.Dhuhr)} />
+        <Prayer name="العَصر" time={formattingTime(prayerTimes.Asr)} />
+        <Prayer name="المَغرب" time={formattingTime(prayerTimes.Maghrib)} />
+        <Prayer name="العِشاء" time={formattingTime(prayerTimes.Isha)} />
       </div>
     );
   }, [prayerTimes, formattingTime]);
@@ -113,13 +113,13 @@ function App() {
           <div className="text-center sm:text-right animate__animated animate__fadeInLeft">
             <h3 className="text-lg sm:text-xl mb-1">التاريخ</h3>
             <div className="space-y-0.5 sm:space-y-1">
-              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft">
+              <h3 className="text-xl text-gray-200 date-text animate__animated animate__fadeInLeft border-b">
                 {dates.GregoianDate.split("-")
                   .map((num) => convertToArabicNumerals(num))
                   .join(" / ")}{" "}
                 م
               </h3>
-              <h3 className="text-sm sm:text-base text-gray-200 date-text animate__animated animate__fadeInLeft">
+              <h3 className="text-xl text-gray-200 date-text animate__animated animate__fadeInLeft border-b">
                 {convertToArabicNumerals(dates.HijriDateDay)} / {" "}
                 {dates.HijriDateMonth} / {" "}
                 {convertToArabicNumerals(dates.HijriDateYear)} هـ 
