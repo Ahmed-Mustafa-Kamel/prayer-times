@@ -68,9 +68,7 @@ function App() {
   };
 
   return (
-    <section className=" h-[100vh] bg-cover bg-no-repeat">
-      <AMLogo />
-
+    <section className="h-[100vh] bg-cover bg-no-repeat">
       <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start top-10 lg:right-60">
         {/* top section */}
         <div id="top" className="flex justify-between border-b-2 p-2">
@@ -119,6 +117,7 @@ function App() {
           <p>Loading prayer times...</p> // or an error message
         )}
       </div>
+      {/* <AMLogo /> */}
     </section>
   );
 }

@@ -1,6 +1,6 @@
 export default function AMLogo() {
   return (
-    <div className=" absolute top-2 right-[3%]">
+    <div className="right-[3%]">
       {/* logo */}
       <h1 className="flex">
         {"</"}
