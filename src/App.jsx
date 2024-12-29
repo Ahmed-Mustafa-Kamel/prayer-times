@@ -71,9 +71,9 @@ function App() {
     <section className="h-[100vh] bg-cover bg-no-repeat">
       <div className="container w-[90%] lg:w-[40%] relative lg:top-5 justify-self-center lg:justify-self-start top-10 lg:right-60">
         {/* top section */}
-        <div id="top" className="flex justify-between border-b-2 p-2">
+        <div id="top" className="flex justify-between border-b-2 p-1">
           {/* city selection */}
-          <div className="city gap-6 flex flex-col justify-center">
+          <div className="city flex flex-col justify-center">
             <h3 className="text-2xl">المدينة</h3>
             <select
               name="city"
@@ -98,9 +98,9 @@ function App() {
                 {dates.GregoianDate.split("-").map((num) => convertToArabicNumerals(num)).join(" / ")} مـ
               </h3>
               <h3 className=" text-gray-200">
-                {convertToArabicNumerals(dates.HijriDateDay)} /{" "}
+                {convertToArabicNumerals(dates.HijriDateDay)}/
                 {dates.HijriDateMonth}/
-                {convertToArabicNumerals(dates.HijriDateYear)} هـ
+                {convertToArabicNumerals(dates.HijriDateYear)}هـ
               </h3>
             </div>
           </div>
