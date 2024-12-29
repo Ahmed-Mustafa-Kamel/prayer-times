@@ -9,7 +9,7 @@ const AMLogo = memo(function AMLogo() {
           href="https://ahmed-mustafa-portfolio-delta.vercel.app/" 
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm hover:text-amber-300 transition-colors flex items-center gap-2"
+          className="text-sm text-white hover:text-amber-300 transition-all flex items-center gap-2"
         >
           <span>أحمد مصطفى</span>
           <div className="flex">
@@ -20,6 +20,7 @@ const AMLogo = memo(function AMLogo() {
               alt="Ahmed Mustafa"
               loading="lazy"
               decoding="async"
+              className="transition-transform hover:scale-110"
             />
           </div>
         </a>
@@ -31,7 +32,7 @@ const AMLogo = memo(function AMLogo() {
           href="https://aladhan.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-300 transition-colors"
+          className="text-white hover:text-amber-300 transition-all"
         >
           Aladhan API
         </a>
