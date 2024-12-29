@@ -109,23 +109,6 @@ function App() {
       <div className="container mx-auto max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[50%] xl:max-w-[40%] backdrop-blur-md rounded-xl shadow-lg">
         {/* top section */}
         <div id="top" className="flex flex-col sm:flex-row justify-between items-center border-b-2 p-3 gap-2 sm:gap-4">
-          {/* city selection */}
-          <div className="city flex flex-col items-center sm:items-start w-full sm:w-auto">
-            <h3 className="text-lg sm:text-xl mb-1">المدينة</h3>
-            <select
-              name="city"
-              className="rounded-lg p-2 w-full sm:w-auto text-sm sm:text-base"
-              onChange={(e) => setCity(e.target.value)}
-              value={city}
-            >
-              {Cities.map((city) => (
-                <option key={city.value} value={city.value}>
-                  {city.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
           {/* date */}
           <div className="text-center sm:text-right">
             <h3 className="text-lg sm:text-xl mb-1">التاريخ</h3>
@@ -143,6 +126,25 @@ function App() {
               </h3> 
             </div>
           </div>
+
+          {/* city selection */}
+          <div className="city flex md:flex-col items-center sm:items-start sm:w-auto">
+            <h3 className="text-lg sm:text-xl mb-1">المدينة</h3>
+            <select
+              name="city"
+              className="rounded-lg p-2 w-full sm:w-auto text-sm sm:text-base"
+              onChange={(e) => setCity(e.target.value)}
+              value={city}
+            >
+              {Cities.map((city) => (
+                <option key={city.value} value={city.value}>
+                  {city.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+
         </div>
 
         {/* prayer times table */}
