@@ -1,7 +1,7 @@
 import Prayer from "./components/Prayer";
 import { Cities, convertToArabicNumerals } from "../src/assets/constants";
 import { useEffect, useState } from "react";
-import AMLogo from "./components/AMLogo";
+// import AMLogo from "./components/AMLogo";
 
 function App() {
   const [prayerTimes, setPrayerTimes] = useState();
