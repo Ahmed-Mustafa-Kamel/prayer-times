@@ -7,7 +7,7 @@ function App() {
   const [prayerTimes, setPrayerTimes] = useState();
   // setting dates
   const [dates, setDates] = useState({
-    GregianDate: "",
+    GregoianDate: "",
     HijriDateDay: "",
     HijriDateMonth: "",
     HijriDateYear: "",
@@ -37,7 +37,7 @@ function App() {
 
         // setting gregoian Date
         setDates({
-          GregianDate: prayer_data.data.date.gregorian.date,
+          GregoianDate: prayer_data.data.date.gregorian.date,
           HijriDateDay: prayer_data.data.date.hijri.day,
           HijriDateMonth: prayer_data.data.date.hijri.month.ar,
           HijriDateYear: prayer_data.data.date.hijri.year,
@@ -94,7 +94,9 @@ function App() {
           <div className="gap-6 space-y-2 sm:text-xs md:text-xl">
             <h3 className="text-2xl">التاريخ</h3>
             <div className="date space-y-2">
-              <h3 className=" text-gray-200">{dates.GregianDate}</h3>
+              <h3 className=" text-gray-200">
+                {dates.GregoianDate.split("-").map((num) => convertToArabicNumerals(num)).join(" / ")} مـ
+              </h3>
               <h3 className=" text-gray-200">
                 {convertToArabicNumerals(dates.HijriDateDay)} /{" "}
                 {dates.HijriDateMonth} /{" "}
