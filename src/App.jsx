@@ -112,6 +112,7 @@ function App() {
           {/* date */}
           <div className="text-center sm:text-right animate__animated animate__fadeInLeft">
             <h3 className="text-lg sm:text-xl mb-1">التاريخ</h3>
+            {/* gregorian */}
             <div className="space-y-0.5 sm:space-y-1">
               <h3 className="text-xl text-gray-200 date-text animate__animated animate__fadeInLeft border-b">
                 {dates.GregoianDate.split("-")
@@ -119,6 +120,7 @@ function App() {
                   .join(" / ")}{" "}
                 م
               </h3>
+              {/* hijri date */}
               <h3 className="text-xl text-gray-200 date-text animate__animated animate__fadeInLeft border-b">
                 {convertToArabicNumerals(dates.HijriDateDay)} / {" "}
                 {dates.HijriDateMonth} / {" "}
