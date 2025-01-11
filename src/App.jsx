@@ -24,7 +24,7 @@ function App() {
     let [houres, minutes] = time.split(":").map(Number);
     const perd = houres >= 12 ? "م" : "ص ";
     houres = houres % 12 || 12;
-
+    
     const arabicHours = convertToArabicNumerals(houres);
     const arabicMinutes = convertToArabicNumerals(
       minutes < 10 ? `0${minutes}` : minutes
@@ -35,7 +35,7 @@ function App() {
 
   useEffect(() => {
     let isSubscribed = true;
-
+    
     const fetchPrayerTimes = async () => {
       try {
         // Check localStorage first
@@ -54,11 +54,12 @@ function App() {
           }
           return;
         }
-
+        
         const response = await fetch(
           `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=Eg&date=${date_today}`
         );
         const prayer_data = await response.json();
+        console.log(prayer_data);
         
         if (!isSubscribed) return;
         
@@ -116,7 +117,11 @@ function App() {
             <div className="space-y-0.5 sm:space-y-1">
               <h3 className="text-xl text-gray-200 date-text animate__animated animate__fadeInLeft border-b">
                 {dates.GregoianDate.split("-")
-                  .map((num) => convertToArabicNumerals(num))
+                  .map((num) => convertToArabicNumerals(
+                    // removing the first character if it's a zero
+                    num[0] === "0" ? num.slice(1) : num
+                    
+                  ))
                   .join(" / ")}{" "}
                 م
               </h3>
