@@ -95,12 +95,12 @@ function App() {
     
     return (
       <div className="prayers">
-        <Prayer name="الفجر" time={formattingTime(prayerTimes.Fajr)} />
+        <Prayer name="الفجْءر" time={formattingTime(prayerTimes.Fajr)} />
         <Prayer name="الشروق" time={formattingTime(prayerTimes.Sunrise)} />
-        <Prayer name="الظهر" time={formattingTime(prayerTimes.Dhuhr)} />
-        <Prayer name="العصر" time={formattingTime(prayerTimes.Asr)} />
-        <Prayer name="المغرب" time={formattingTime(prayerTimes.Maghrib)} />
-        <Prayer name="العشاء" time={formattingTime(prayerTimes.Isha)} />
+        <Prayer name="الظُّهْر" time={formattingTime(prayerTimes.Dhuhr)} />
+        <Prayer name="العَصر" time={formattingTime(prayerTimes.Asr)} />
+        <Prayer name="المَغرب" time={formattingTime(prayerTimes.Maghrib)} />
+        <Prayer name="العِشاء" time={formattingTime(prayerTimes.Isha)} />
       </div>
     );
   }, [prayerTimes, formattingTime]);
